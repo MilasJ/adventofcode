@@ -7,7 +7,6 @@ def main():
     @time_it
     def part1():
         diff = 0
-        print(list1)
         list1.sort()
         list2.sort()
         for i in range(len(list1)):
@@ -15,7 +14,14 @@ def main():
         return diff
     @time_it
     def part2():
-        pass
+        simscore = 0
+        for i in list1:
+            samenum = 0
+            for j in list2:
+                if i == j:
+                    samenum += 1
+            simscore += samenum * i
+        return simscore
     print(f'Part 1: {part1()}')
     print(f'Part 2: {part2()}')
 if __name__ == '__main__':
