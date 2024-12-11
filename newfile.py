@@ -6,7 +6,7 @@ cookie = {
     # '_ga':'GA1.2.1763632613.1670886531',
     # '_gid':'GA1.2.1160750930.1674516883',
     # '_gat':'1',
-    'session':'53616c7465645f5fb7e085420a02b867a3c559d41a8652429a91df9413da0072b3a1a81520df46ac7470e40057249250ef0cfdf5b298fe3533ae7b1991c4e994'}
+    'session':'53616c7465645f5f3629edbaeb85a2b8c366f7c09adb785325acf4473fb53689f90437954735668c6ae0aa7af0ecf6d38da5c9db1222a6b1e66f6fd6d0b75825'}
 for folder in ('inputs','scripts'):
     if not os.path.isdir(f'/{folder}/{year}'):
         os.makedirs(f'{folder}/{year}')
