@@ -8,16 +8,24 @@ def main():
     def part1():
         joltage = 0
         for bank in lines:
-            first_digit = str(max([int(battery) for battery in bank[:-1]]))
-            second_digit = str(
-                max([int(battery) for battery in bank[bank.find(first_digit) + 1 :]])
-            )
+            first_digit = str(max(bank[:-1]))
+            second_digit = str(max(bank[bank.find(first_digit) + 1 :]))
             joltage += int(first_digit + second_digit)
         return joltage
 
     @time_it
     def part2():
-        pass
+        joltage = 0
+        for bank in lines:
+            digits = ""
+            pos = 0
+            for i in range(1, 12):
+                digits += str(max(bank[: i - 12]))
+                pos = bank.find(digits[-1]) + 1
+                bank = bank[pos:]
+            digits += str(max(bank[:]))
+            joltage += int(digits)
+        return joltage
 
     print(f"Part 1: {part1()}")
     print(f"Part 2: {part2()}")
